@@ -57,7 +57,7 @@ function App() {
     <div>
       {/* Navbar */}
       <div className="navbar bg-base-100 shadow-sm flex justify-center p-4">
-        <a className="text-xl font-bold">Kiryana Store</a>
+        <a className="text-xl font-bold">Bazaar Kiryana Store</a>
       </div>
 
       {/* Search Bar */}
