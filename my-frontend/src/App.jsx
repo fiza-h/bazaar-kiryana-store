@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./components/productCard";
+import AddProduct from "./components/AddProduct";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -9,6 +10,8 @@ function App() {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 20;
+  const [showForm, setShowForm] = useState(false); // State to manage form visibility
+
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "light");
@@ -92,6 +95,15 @@ function App() {
         ))}
         <button className="btn btn-error" onClick={resetFilters}>Reset</button>
       </div>
+
+      {/* Add Product Button */}
+      <div className="flex justify-center items-center">
+        <button className="btn btn-neutral" onClick={() => setShowForm(true)}>Add Product</button>
+      </div>
+
+      {/* Conditionally Render AddProduct Component */}
+      {showForm && <AddProduct />}
+
 
       {/* Products Display */}
       <div className="p-4">
